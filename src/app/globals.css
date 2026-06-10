@@ -128,3 +128,8 @@
     @apply font-sans;
   }
 }
+
+::selection {
+  background-color: #9c3b3b;
+  color: black;
+}
