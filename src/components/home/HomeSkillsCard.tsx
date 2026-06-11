@@ -16,7 +16,7 @@ export const HomeSkillsCard = ({ title, skills }: HomeSkillsCardProps) => {
     <BorderGlow
       className="p-6 rounded-md min-h-60 h-full w-full overflow-clip"
       edgeSensitivity={30}
-      glowColor="40 80 80"
+      glowColor="20 20 20"
       backgroundColor="#1A1A1A"
       borderRadius={6}
       glowRadius={40}

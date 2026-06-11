@@ -16,7 +16,7 @@ export const HomeAboutCard = ({
     <BorderGlow
       className="bg-[#1A1A1A] p-6 rounded-md md:min-h-60 h-full max-w-130 w-full mx-auto"
       edgeSensitivity={30}
-      glowColor="40 80 80"
+      glowColor="20 20 20"
       backgroundColor="#1A1A1A"
       borderRadius={6}
       glowRadius={40}
