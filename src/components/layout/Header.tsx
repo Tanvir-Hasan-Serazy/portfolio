@@ -23,8 +23,8 @@ export const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-full md:max-w-4xl xl:max-w-7xl px-4">
-      <div className="backdrop-blue-md bg-background border border-primary/30 rounded-lg px-8 sm:px-10 md:px-12 py-4 flex items-center justify-between gap-4">
+    <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full md:max-w-4xl xl:max-w-7xl px-4">
+      <div className="backdrop-blue-md bg-background border border-primary/30 rounded-lg px-8 sm:px-10 md:px-12 py-3 flex items-center justify-between gap-4">
         <Link href="/" className="w-10 h-10 flex items-center rounded-sm">
           <ImageWithFallback
             src="/images/logo.svg"
