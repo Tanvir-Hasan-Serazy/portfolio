@@ -1,3 +1,8 @@
+"use client";
+
+import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import ShinyText from "../ShinyText";
 import { HomeAboutCard } from "./HomeAboutCard";
 
@@ -34,7 +39,15 @@ const homeAboutData = [
 
 export const HomeAbout = () => {
   return (
-    <section className="min-h-screen my-20 lg:my-24">
+    <section className="my-36">
+      <style>{`
+        .swiper-pagination-bullet {
+          background-color: #d1d5db !important;
+        }
+        .swiper-pagination-bullet-active {
+          background-color: var(--color-primary, #3b82f6) !important;
+        }
+      `}</style>
       <div className="text-center">
         <ShinyText
           text="About Me"
@@ -52,8 +65,29 @@ export const HomeAbout = () => {
       </div>
       <span className="h-1 w-32 md:w-48 rounded-md bg-primary mx-auto block mt-2"></span>
 
-      {/* About Me Cards */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 px-4 gap-4 md:gap-6 xl:gap-10 mt-12">
+      <div className="max-w-6xl mx-auto px-4 mt-12 lg:hidden">
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          slidesPerView={1}
+          spaceBetween={16}
+          autoplay={{ delay: 1000, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          loop={true}
+        >
+          {homeAboutData.map((item) => (
+            <SwiperSlide key={item.id} className="h-auto pb-12">
+              <HomeAboutCard
+                title={item.title}
+                description={item.description}
+                imageSrc={item.imageSrc}
+                alt={item.alt}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      <div className="hidden lg:grid max-w-6xl mx-auto grid-cols-1 md:grid-cols-2 px-4 gap-4 md:gap-6 xl:gap-10 mt-12">
         {homeAboutData.map((item) => (
           <HomeAboutCard
             key={item.id}
