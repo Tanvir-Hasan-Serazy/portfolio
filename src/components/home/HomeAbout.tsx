@@ -39,7 +39,7 @@ const homeAboutData = [
 
 export const HomeAbout = () => {
   return (
-    <section className="my-36">
+    <section id="about" className="my-36 scroll-mt-24">
       <style>{`
         .swiper-pagination-bullet {
           background-color: #d1d5db !important;

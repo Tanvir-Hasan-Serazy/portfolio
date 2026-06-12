@@ -12,11 +12,10 @@ import { useState } from "react";
 import { ImageWithFallback } from "../common/ImageWithFallback";
 
 const navigationLinks = [
-  { href: "#", label: "About" },
-  { href: "#", label: "Experience" },
-  { href: "#", label: "Skills" },
-  { href: "#", label: "Projects" },
-  { href: "#", label: "Contact" },
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#experience", label: "Experience" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export const Header = () => {
@@ -49,11 +48,20 @@ export const Header = () => {
           ))}
         </div>
 
-        {/* Locale Switcher */}
-        <div className="hidden lg:flex items-center gap-2">
-          <button className="p-2 bg-primary text-white  rounded-sm">
+        {/* Resume Download */}
+        {/* <div className="hidden lg:flex items-center gap-2">
+          <button className="p-2 bg-primary text-white rounded-sm">
             Resume
           </button>
+        </div> */}
+        <div className="hidden lg:flex items-center gap-2">
+          <Link
+            href="/resume/Tanvir-Hasan-Serazy-Resume.pdf"
+            download
+            className="p-2 bg-primary text-white rounded-sm"
+          >
+            Resume
+          </Link>
         </div>
 
         {/* Mobile Navigation */}
@@ -84,9 +92,3 @@ export const Header = () => {
     </header>
   );
 };
-
-//     ${
-//     isActive(link.href)
-//       ? "border-b-primary"
-//       : "hover:text-primary border-b-transparent hover:border-b-primary duration-700"
-//   }

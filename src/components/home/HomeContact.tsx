@@ -47,7 +47,10 @@ export const HomeContact = () => {
     },
   ];
   return (
-    <section className="my-36 max-w-7xl mx-auto px-4 xl:px-0 ">
+    <section
+      id="contact"
+      className="my-36 max-w-7xl mx-auto px-4 xl:px-0 scroll-mt-24"
+    >
       <div className="flex flex-col gap-2 ">
         <ShinyText
           text="LET'S BUILD SOMETHING"

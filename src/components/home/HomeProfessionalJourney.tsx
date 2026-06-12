@@ -255,7 +255,7 @@ const data = [
 
 export const HomeProfessionalJourney = () => {
   return (
-    <section className="min-h-screen my-20 ">
+    <section id="experience" className="min-h-screen my-20 scroll-mt-24">
       <div className="text-center">
         <ShinyText
           text="Professional Journey"
