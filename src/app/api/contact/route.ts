@@ -6,16 +6,16 @@
 
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { contactFormSchema } from "@/components/home/HomeContactForm";
+import { contactFormSchema } from "@/schemas/contactFormSchema";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // The address that receives the contact emails
-const TO_EMAIL = "your@email.com";
+const TO_EMAIL = "thserazy@gmail.com";
 
 // The "from" address must be a verified domain in your Resend account.
 // During development you can use: onboarding@resend.dev  (sends only to your own account)
-const FROM_ADDRESS = "Contact Form <onboarding@resend.dev>";
+const FROM_ADDRESS = "onboarding@resend.dev";
 
 export async function POST(req: Request) {
   // ── 1. Parse body ──────────────────────────────────────────────────────────

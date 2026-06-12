@@ -72,7 +72,7 @@ export const HomeSkills = () => {
           background-color: var(--color-primary, #3b82f6) !important;
         }
       `}</style>
-      <section className="min-h-screen my-20 lg:my-24">
+      <section className="lg:min-h-screen lg:my-24">
         <div className="text-center">
           <ShinyText
             text="Skills"

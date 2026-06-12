@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import ShinyText from "../ShinyText";
 import { Timeline } from "../ui/timeline";
- 
+
 const data = [
   {
     id: 1,
@@ -133,7 +133,7 @@ const data = [
   },
   {
     id: 2,
-    title: "Early 2025",
+    title: "2025",
     content: (
       <div>
         <p className="mb-8 text-xs font-normal text-white md:text-base text-justify">

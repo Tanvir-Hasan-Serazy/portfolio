@@ -11,6 +11,7 @@ import BorderGlow from "../BorderGlow";
 import ShinyText from "../ShinyText";
 import { FloatingDock } from "../ui/floating-dock";
 import { ContactForm } from "./HomeContactForm";
+import Link from "next/link";
 
 export const HomeContact = () => {
   const links = [
@@ -46,7 +47,7 @@ export const HomeContact = () => {
     },
   ];
   return (
-    <section className="my-36 min-h-screen max-w-7xl mx-auto px-4 xl:px-0 ">
+    <section className="my-36 max-w-7xl mx-auto px-4 xl:px-0 ">
       <div className="flex flex-col gap-2 ">
         <ShinyText
           text="LET'S BUILD SOMETHING"
@@ -102,7 +103,12 @@ export const HomeContact = () => {
             </BorderGlow>
             <div>
               <p className="text-lg text-secondary">Email</p>
-              <p>thserazy@gmail.com</p>
+              <Link
+                href="mailto:thserazy@gmail.com"
+                className="hover:underline"
+              >
+                thserazy@gmail.com
+              </Link>
             </div>
           </div>
 

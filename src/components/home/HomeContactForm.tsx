@@ -1,51 +1,31 @@
 "use client";
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { SendHorizontal, Loader2 } from "lucide-react";
-import { Controller } from "react-hook-form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import {
   Field,
   FieldContent,
-  FieldDescription,
   FieldError,
-  FieldGroup,
   FieldLabel,
 } from "@/components/ui/field";
-
-export const contactFormSchema = z.object({
-  name: z
-    .string()
-    .min(2, { message: "Name must be at least 2 characters." })
-    .max(64, { message: "Name must be at most 64 characters." }),
-
-  email: z.string().email({ message: "Enter a valid email address." }),
-
-  subject: z
-    .string()
-    .min(4, { message: "Subject must be at least 4 characters." })
-    .max(100, { message: "Subject must be at most 100 characters." }),
-
-  message: z
-    .string()
-    .min(20, { message: "Message must be at least 20 characters." })
-    .max(2000, { message: "Message must be at most 2000 characters." }),
-});
-
-export type ContactFormValues = z.infer<typeof contactFormSchema>;
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
+import {
+  contactFormSchema,
+  ContactFormValues,
+} from "@/schemas/contactFormSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2, SendHorizontal } from "lucide-react";
+import { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { LoaderOne } from "../ui/loader";
 
 type SubmitState = "idle" | "loading" | "success" | "error";
 
-// ─── Shared input class ───────────────────────────────────────────────────────
+// Shared input class
 
 const inputCn = cn(
-  "font-mono text-base text-rose-100 placeholder:text-[#5a3535]",
+  "font-mono text-base text-rose-100 placeholder:text-sm md:placeholder-text-base placeholder:text-[#5a3535]",
   "bg-[#120d0d] border border-[#3a1f1f]",
   "focus-visible:ring-1 focus-visible:ring-[#8b1a1a] focus-visible:border-[#8b1a1a]",
   "rounded-md transition-colors duration-150 h-10",
@@ -72,16 +52,17 @@ export function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
-
       if (!res.ok) throw new Error("Failed to send message.");
-
       setSubmitState("success");
       form.reset();
+      setTimeout(() => {
+        setSubmitState("idle");
+      }, 3000);
     } catch {
       setSubmitState("error");
     } finally {
       // Reset back to idle after 3 s so the user can try again
-      setTimeout(() => setSubmitState("idle"), 3000);
+      setTimeout(() => setSubmitState("idle"), 5000);
     }
   }
 
@@ -90,7 +71,7 @@ export function ContactForm() {
   return (
     <div
       className={cn(
-        "w-full max-w-xl lg:w-2xl rounded-md border p-8",
+        "w-full md:max-w-xl lg:w-2xl rounded-md border p-8",
         "bg-[#111010] border-[#3a1f1f]",
         "shadow-[0_0_40px_rgba(139,0,0,0.08)]",
       )}
@@ -187,7 +168,10 @@ export function ContactForm() {
                 <Textarea
                   rows={6}
                   placeholder="Define project scope or collaboration details..."
-                  className={cn(inputCn, "resize-none")}
+                  className={cn(
+                    inputCn,
+                    "w-full resize-none wrap-break-words overflow-wrap-anywhere",
+                  )}
                   {...field}
                 />
               )}
@@ -202,8 +186,8 @@ export function ContactForm() {
           type="submit"
           disabled={isLoading}
           className={cn(
-            "w-auto min-w-50 gap-3 px-8 py-5",
-            "font-mono text-[11px] uppercase tracking-widest",
+            "w-auto min-w-50 gap-3 px-8  py-6",
+            "uppercase tracking-widest text-sm font-medium lg:text-base",
             "bg-primary hover:bg-[#a02020] active:bg-[#6b1010]",
             "text-[#f0d0d0] border-none rounded-md",
             "transition-all duration-200",
@@ -212,10 +196,13 @@ export function ContactForm() {
           )}
         >
           {isLoading ? (
-            <>
-              <Loader2 className="h-4 w-4 animate-spin" />
+            <div className="flex items-center gap-2">
+              {/* <Loader2 className="h-4 w-4 animate-spin" /> */}
+              <div className="mb-3">
+                <LoaderOne />
+              </div>
               Sending...
-            </>
+            </div>
           ) : submitState === "success" ? (
             "Message Sent ✓"
           ) : submitState === "error" ? (
