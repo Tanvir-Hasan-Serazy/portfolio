@@ -123,11 +123,17 @@
   * {
     @apply border-border outline-ring/50;
   }
+  body[data-scroll-locked] {
+    overflow: hidden !important;
+    /* Prevent the width jump by compensating for scrollbar width */
+    margin-right: 0 !important;
+  }
   body {
     @apply bg-background text-foreground;
   }
   html {
     @apply font-sans;
+    scrollbar-gutter: stable;
   }
 }
 
