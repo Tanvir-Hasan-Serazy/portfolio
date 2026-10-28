@@ -1,6 +1,6 @@
 "use client";
 
-import { Autoplay, Pagination } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import ShinyText from "../ShinyText";
@@ -67,10 +67,9 @@ export const HomeAbout = () => {
 
       <div className="max-w-6xl mx-auto px-4 mt-12 lg:hidden">
         <Swiper
-          modules={[Pagination, Autoplay]}
+          modules={[Pagination]}
           slidesPerView={1}
           spaceBetween={16}
-          autoplay={{ delay: 1000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           loop={true}
         >

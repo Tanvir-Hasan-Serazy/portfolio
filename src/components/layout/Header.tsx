@@ -30,7 +30,6 @@ export const Header = () => {
             alt="Logo"
             width={1400}
             height={700}
-            loading="eager"
             className="object-cover w-full h-full"
           />
         </Link>

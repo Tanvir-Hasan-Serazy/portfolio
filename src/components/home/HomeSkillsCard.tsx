@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useInView } from "framer-motion";
 import BorderGlow from "../BorderGlow";
 import { ImageWithFallback } from "../common/ImageWithFallback";

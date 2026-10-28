@@ -2,7 +2,6 @@
 import {
   useRef,
   useCallback,
-  useState,
   useEffect,
   type ReactNode,
 } from "react";
@@ -85,14 +84,23 @@ function animateValue({
   onEnd,
 }: AnimateOpts) {
   const t0 = performance.now() + delay;
+  let frameId = 0;
+  let timeoutId = 0;
   function tick() {
     const elapsed = performance.now() - t0;
     const t = Math.min(elapsed / duration, 1);
     onUpdate(start + (end - start) * ease(t));
-    if (t < 1) requestAnimationFrame(tick);
+    if (t < 1) frameId = requestAnimationFrame(tick);
     else if (onEnd) onEnd();
   }
-  setTimeout(() => requestAnimationFrame(tick), delay);
+  timeoutId = window.setTimeout(() => {
+    frameId = requestAnimationFrame(tick);
+  }, delay);
+
+  return () => {
+    window.clearTimeout(timeoutId);
+    cancelAnimationFrame(frameId);
+  };
 }
 
 const GRADIENT_POSITIONS = [
@@ -133,10 +141,10 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
   fillOpacity = 0.5,
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
-  const [cursorAngle, setCursorAngle] = useState(45);
-  const [edgeProximity, setEdgeProximity] = useState(0);
-  const [sweepActive, setSweepActive] = useState(false);
+  const isHoveredRef = useRef(false);
+  const sweepActiveRef = useRef(false);
+  const edgeProximityRef = useRef(0);
+  const cursorAngleRef = useRef(45);
 
   const getCenterOfElement = useCallback((el: HTMLElement) => {
     const { width, height } = el.getBoundingClientRect();
@@ -171,6 +179,40 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
     [getCenterOfElement],
   );
 
+  const updateGlowStyles = useCallback(() => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const isVisible = isHoveredRef.current || sweepActiveRef.current;
+    const edgeProximity = edgeProximityRef.current;
+    const colorSensitivity = edgeSensitivity + 20;
+    const borderOpacity = isVisible
+      ? Math.max(
+          0,
+          (edgeProximity * 100 - colorSensitivity) /
+            (100 - colorSensitivity),
+        )
+      : 0;
+    const glowOpacity = isVisible
+      ? Math.max(
+          0,
+          (edgeProximity * 100 - edgeSensitivity) /
+            (100 - edgeSensitivity),
+        )
+      : 0;
+
+    card.style.setProperty(
+      "--glow-angle",
+      `${cursorAngleRef.current.toFixed(3)}deg`,
+    );
+    card.style.setProperty("--glow-border-opacity", `${borderOpacity}`);
+    card.style.setProperty(
+      "--glow-fill-opacity",
+      `${borderOpacity}`,
+    );
+    card.style.setProperty("--glow-opacity", `${glowOpacity}`);
+  }, [edgeSensitivity]);
+
   const handlePointerMove = useCallback(
     (e: React.PointerEvent<HTMLDivElement>) => {
       const card = cardRef.current;
@@ -178,87 +220,108 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      setEdgeProximity(getEdgeProximity(card, x, y));
-      setCursorAngle(getCursorAngle(card, x, y));
+      edgeProximityRef.current = getEdgeProximity(card, x, y);
+      cursorAngleRef.current = getCursorAngle(card, x, y);
+      updateGlowStyles();
     },
-    [getEdgeProximity, getCursorAngle],
+    [getEdgeProximity, getCursorAngle, updateGlowStyles],
   );
 
   useEffect(() => {
     if (!animated) return;
     const angleStart = 110;
     const angleEnd = 465;
-    setSweepActive(true);
-    setCursorAngle(angleStart);
+    sweepActiveRef.current = true;
+    cursorAngleRef.current = angleStart;
+    updateGlowStyles();
 
-    animateValue({ duration: 500, onUpdate: (v) => setEdgeProximity(v / 100) });
-    animateValue({
+    const cleanups = [
+      animateValue({
+        duration: 500,
+        onUpdate: (v) => {
+          edgeProximityRef.current = v / 100;
+          updateGlowStyles();
+        },
+      }),
+      animateValue({
       ease: easeInCubic,
       duration: 1500,
       end: 50,
       onUpdate: (v) => {
-        setCursorAngle((angleEnd - angleStart) * (v / 100) + angleStart);
+        cursorAngleRef.current =
+          (angleEnd - angleStart) * (v / 100) + angleStart;
+        updateGlowStyles();
       },
-    });
-    animateValue({
+      }),
+      animateValue({
       ease: easeOutCubic,
       delay: 1500,
       duration: 2250,
       start: 50,
       end: 100,
       onUpdate: (v) => {
-        setCursorAngle((angleEnd - angleStart) * (v / 100) + angleStart);
+        cursorAngleRef.current =
+          (angleEnd - angleStart) * (v / 100) + angleStart;
+        updateGlowStyles();
       },
-    });
-    animateValue({
+      }),
+      animateValue({
       ease: easeInCubic,
       delay: 2500,
       duration: 1500,
       start: 100,
       end: 0,
-      onUpdate: (v) => setEdgeProximity(v / 100),
-      onEnd: () => setSweepActive(false),
-    });
-  }, [animated]);
+      onUpdate: (v) => {
+        edgeProximityRef.current = v / 100;
+        updateGlowStyles();
+      },
+      onEnd: () => {
+        sweepActiveRef.current = false;
+        updateGlowStyles();
+      },
+      }),
+    ];
 
-  const colorSensitivity = edgeSensitivity + 20;
-  const isVisible = isHovered || sweepActive;
-  const borderOpacity = isVisible
-    ? Math.max(
-        0,
-        (edgeProximity * 100 - colorSensitivity) / (100 - colorSensitivity),
-      )
-    : 0;
-  const glowOpacity = isVisible
-    ? Math.max(
-        0,
-        (edgeProximity * 100 - edgeSensitivity) / (100 - edgeSensitivity),
-      )
-    : 0;
+    return () => {
+      cleanups.forEach((cleanup) => cleanup?.());
+      sweepActiveRef.current = false;
+      updateGlowStyles();
+    };
+  }, [animated, updateGlowStyles]);
 
   const meshGradients = buildMeshGradients(colors);
   const borderBg = meshGradients.map((g) => `${g} border-box`);
   const fillBg = meshGradients.map((g) => `${g} padding-box`);
-  const angleDeg = `${cursorAngle.toFixed(3)}deg`;
+  const angleDeg = "var(--glow-angle, 45deg)";
 
   return (
     <div
       ref={cardRef}
       onPointerMove={handlePointerMove}
-      onPointerEnter={() => setIsHovered(true)}
-      onPointerLeave={() => setIsHovered(false)}
+      onPointerEnter={() => {
+        isHoveredRef.current = true;
+        updateGlowStyles();
+      }}
+      onPointerLeave={() => {
+        isHoveredRef.current = false;
+        updateGlowStyles();
+      }}
       className={`relative grid isolate border border-white/15 ${className}`}
       style={{
+        "--glow-angle": "45deg",
+        "--glow-border-opacity": 0,
+        "--glow-fill-opacity": 0,
+        "--glow-opacity": 0,
         background: backgroundColor,
         borderRadius: `${borderRadius}px`,
         transform: "translate3d(0, 0, 0.01px)",
         boxShadow:
           "rgba(0,0,0,0.1) 0 1px 2px, rgba(0,0,0,0.1) 0 2px 4px, rgba(0,0,0,0.1) 0 4px 8px, rgba(0,0,0,0.1) 0 8px 16px, rgba(0,0,0,0.1) 0 16px 32px, rgba(0,0,0,0.1) 0 32px 64px",
-      }}
+      } as React.CSSProperties}
     >
       {/* mesh gradient border */}
       <div
-        className="absolute inset-0 rounded-[inherit] -z-[1]"
+        className="absolute inset-0 rounded-[inherit] z-[-1]"
         style={{
           border: "1px solid transparent",
           background: [
@@ -266,18 +329,16 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
             "linear-gradient(rgb(255 255 255 / 0%) 0% 100%) border-box",
             ...borderBg,
           ].join(", "),
-          opacity: borderOpacity,
+          opacity: "var(--glow-border-opacity)",
           maskImage: `conic-gradient(from ${angleDeg} at center, black ${coneSpread}%, transparent ${coneSpread + 15}%, transparent ${100 - coneSpread - 15}%, black ${100 - coneSpread}%)`,
           WebkitMaskImage: `conic-gradient(from ${angleDeg} at center, black ${coneSpread}%, transparent ${coneSpread + 15}%, transparent ${100 - coneSpread - 15}%, black ${100 - coneSpread}%)`,
-          transition: isVisible
-            ? "opacity 0.25s ease-out"
-            : "opacity 0.75s ease-in-out",
+          transition: "opacity 0.25s ease-out",
         }}
       />
 
       {/* mesh gradient fill near edges */}
       <div
-        className="absolute inset-0 rounded-[inherit] -z-[1]"
+        className="absolute inset-0 rounded-[inherit] z-[-1]"
         style={
           {
             border: "1px solid transparent",
@@ -303,28 +364,24 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
             maskComposite: "subtract, add, add, add, add, add",
             WebkitMaskComposite:
               "source-out, source-over, source-over, source-over, source-over, source-over",
-            opacity: borderOpacity * fillOpacity,
+            opacity: `calc(var(--glow-fill-opacity) * ${fillOpacity})`,
             mixBlendMode: "soft-light",
-            transition: isVisible
-              ? "opacity 0.25s ease-out"
-              : "opacity 0.75s ease-in-out",
+            transition: "opacity 0.25s ease-out",
           } as React.CSSProperties
         }
       />
 
       {/* outer glow */}
       <span
-        className="absolute pointer-events-none z-[1] rounded-[inherit]"
+        className="absolute pointer-events-none z-1 rounded-[inherit]"
         style={
           {
             inset: `${-glowRadius}px`,
             maskImage: `conic-gradient(from ${angleDeg} at center, black 2.5%, transparent 10%, transparent 90%, black 97.5%)`,
             WebkitMaskImage: `conic-gradient(from ${angleDeg} at center, black 2.5%, transparent 10%, transparent 90%, black 97.5%)`,
-            opacity: glowOpacity,
+            opacity: "var(--glow-opacity)",
             mixBlendMode: "plus-lighter",
-            transition: isVisible
-              ? "opacity 0.25s ease-out"
-              : "opacity 0.75s ease-in-out",
+            transition: "opacity 0.25s ease-out",
           } as React.CSSProperties
         }
       >
@@ -337,7 +394,7 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
         />
       </span>
 
-      <div className="flex flex-col relative overflow-auto z-[1]">
+      <div className="flex flex-col relative overflow-auto z-1">
         {children}
       </div>
     </div>

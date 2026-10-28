@@ -6,6 +6,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import Image from "next/image";
 import ShinyText from "../ShinyText";
 import { Timeline } from "../ui/timeline";
 
@@ -27,12 +28,12 @@ const data = [
           {/* Image 1 */}
           <Dialog key="nexm">
             <DialogTrigger className="cursor-pointer">
-              <img
+              <Image
                 src="/images/professional-journey/nexm.png"
                 alt="startup template"
                 width={500}
                 height={500}
-                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] md:h-44 lg:h-60"
               />
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
@@ -40,12 +41,12 @@ const data = [
                 <DialogTitle className="sr-only"></DialogTitle>
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
-              <img
+              <Image
                 src="/images/professional-journey/nexm.png"
                 alt="startup template"
                 width={1500}
                 height={1000}
-                className="h-40 md:h-80 lg:h-100 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]  "
+                className="h-40 md:h-80 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset]  "
               />
             </DialogContent>
           </Dialog>
@@ -53,12 +54,12 @@ const data = [
           {/* Image 2 */}
           <Dialog key="halal-fly2">
             <DialogTrigger className="cursor-pointer">
-              <img
+              <Image
                 src="/images/professional-journey/halal-fly2.png"
                 alt="startup template"
                 width={500}
                 height={500}
-                className="h-20 lg:h-60 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]  "
+                className="h-20 lg:h-60 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset]  "
               />
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
@@ -66,12 +67,12 @@ const data = [
                 <DialogTitle className="sr-only"></DialogTitle>
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
-              <img
+              <Image
                 src="/images/professional-journey/halal-fly2.png"
                 alt="startup template"
                 width={1500}
                 height={1000}
-                className="h-40 md:h-80 lg:h-100 xl:h-140 w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]  "
+                className="h-40 md:h-80 lg:h-100 xl:h-140 w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset]  "
               />
             </DialogContent>
           </Dialog>
@@ -79,12 +80,12 @@ const data = [
           {/* Image 3 */}
           <Dialog key="halal-fly3">
             <DialogTrigger className="cursor-pointer">
-              <img
+              <Image
                 src="/images/professional-journey/halal-fly3.png"
                 alt="startup template"
                 width={500}
                 height={500}
-                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] md:h-44 lg:h-60"
               />
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
@@ -92,12 +93,12 @@ const data = [
                 <DialogTitle className="sr-only"></DialogTitle>
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
-              <img
+              <Image
                 src="/images/professional-journey/halal-fly3.png"
                 alt="startup template"
                 width={1500}
                 height={1000}
-                className="h-40 md:h-80 lg:h-100 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]  lg:h-120"
+                className="h-40 md:h-80 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset]  lg:h-120"
               />
             </DialogContent>
           </Dialog>
@@ -105,12 +106,12 @@ const data = [
           {/* Image 4 */}
           <Dialog key="halal-fly4">
             <DialogTrigger className="cursor-pointer">
-              <img
+              <Image
                 src="/images/professional-journey/halal-fly1.jpg"
                 alt="startup template"
                 width={500}
                 height={500}
-                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] md:h-44 lg:h-60"
               />
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
@@ -118,12 +119,12 @@ const data = [
                 <DialogTitle className="sr-only"></DialogTitle>
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
-              <img
+              <Image
                 src="/images/professional-journey/halal-fly1.jpg"
                 alt="startup template"
                 width={1500}
                 height={1000}
-                className="h-40 md:h-80 lg:h-100 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+                className="h-40 md:h-80 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset]"
               />
             </DialogContent>
           </Dialog>
@@ -147,12 +148,12 @@ const data = [
           {/* Image 1 */}
           <Dialog key="skitto1">
             <DialogTrigger className="cursor-pointer" key="skitto1">
-              <img
+              <Image
                 src="/images/professional-journey/skitto1.png"
                 alt="hero template"
                 width={500}
                 height={500}
-                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] md:h-44 lg:h-60"
               />
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
@@ -160,12 +161,12 @@ const data = [
                 <DialogTitle className="sr-only"></DialogTitle>
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
-              <img
+              <Image
                 src="/images/professional-journey/skitto1.png"
                 alt="hero template"
                 width={1500}
                 height={1000}
-                className="h-40 md:h-80 lg:h-100 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] "
+                className="h-40 md:h-80 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] "
               />
             </DialogContent>
           </Dialog>
@@ -173,12 +174,12 @@ const data = [
           {/* Image 2 */}
           <Dialog key="skitto2">
             <DialogTrigger className="cursor-pointer" key="skitto2">
-              <img
+              <Image
                 src="/images/professional-journey/skitto2.png"
                 alt="hero template"
                 width={500}
                 height={500}
-                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] md:h-44 lg:h-60"
               />
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
@@ -186,12 +187,12 @@ const data = [
                 <DialogTitle className="sr-only"></DialogTitle>
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
-              <img
+              <Image
                 src="/images/professional-journey/skitto2.png"
                 alt="hero template"
                 width={1500}
                 height={1000}
-                className="h-40 md:h-80 lg:h-100 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] "
+                className="h-40 md:h-80 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] "
               />
             </DialogContent>
           </Dialog>
@@ -199,12 +200,12 @@ const data = [
           {/* Image 3 */}
           <Dialog key="sundarban1">
             <DialogTrigger className="cursor-pointer" key="sundarban1">
-              <img
+              <Image
                 src="/images/professional-journey/sundarban1.png"
                 alt="bento template"
                 width={500}
                 height={500}
-                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] md:h-44 lg:h-60"
               />
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
@@ -212,12 +213,12 @@ const data = [
                 <DialogTitle className="sr-only"></DialogTitle>
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
-              <img
+              <Image
                 src="/images/professional-journey/sundarban1.png"
                 alt="bento template"
                 width={1500}
                 height={1000}
-                className="h-40 md:h-80 lg:h-100 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] "
+                className="h-40 md:h-80 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] "
               />
             </DialogContent>
           </Dialog>
@@ -225,12 +226,12 @@ const data = [
           {/* Image 4 */}
           <Dialog key="sundarban2">
             <DialogTrigger className="cursor-pointer" key="sundarban2">
-              <img
+              <Image
                 src="/images/professional-journey/sundarban2.png"
                 alt="cards template"
                 width={500}
                 height={500}
-                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
+                className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] md:h-44 lg:h-60"
               />
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
@@ -238,12 +239,12 @@ const data = [
                 <DialogTitle className="sr-only"></DialogTitle>
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
-              <img
+              <Image
                 src="/images/professional-journey/sundarban2.png"
                 alt="cards template"
                 width={1500}
                 height={1000}
-                className="h-40 md:h-80 lg:h-100 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] "
+                className="h-40 md:h-80 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] "
               />
             </DialogContent>
           </Dialog>

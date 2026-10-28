@@ -16,7 +16,7 @@ export const HomeBanner = () => {
       <div className="absolute z-10 bg-linear-to-t lg:bg-linear-to-bottom from-black to-transparent w-full h-full lg:h-full"></div>
       <div className="max-w-7xl mx-auto px-4 xl:px-0 z-10 flex flex-col-reverse lg:flex-row items-center justify-between gap-8 my-32 md:my-28 lg:my-20">
         <div>
-          <p className="py-2 font-medium">HEY, I'M</p>
+          <p className="py-2 font-medium">HEY, I&apos;M</p>
           <div className="flex flex-col gap-2">
             <ShinyText
               text="Tanvir Hasan"
@@ -63,7 +63,7 @@ export const HomeBanner = () => {
           <ImageWithFallback
             src="/images/banner/banner.png"
             alt="Banner"
-            loading="eager"
+            preload
             height={1700}
             width={1500}
             className="w-60 h-72 md:w-96 md:h-112 lg:w-120 lg:h-132 xl:w-lg xl:h-152 object-cover"
