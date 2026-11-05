@@ -15,7 +15,7 @@ import {
   ContactFormValues,
 } from "@/schemas/contactFormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2, SendHorizontal } from "lucide-react";
+import { SendHorizontal } from "lucide-react";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { LoaderOne } from "../ui/loader";
@@ -84,7 +84,7 @@ export function ContactForm() {
         {/* Row: Name + Email */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <Field>
-            <FieldLabel className="uppercase tracking-widest text-secondary">
+            <FieldLabel htmlFor="contact-name" className="uppercase tracking-widest text-secondary">
               Name
             </FieldLabel>
 
@@ -94,6 +94,7 @@ export function ContactForm() {
                 name="name"
                 render={({ field }) => (
                   <Input
+                    id="contact-name"
                     placeholder="John Doe"
                     autoComplete="name"
                     className={inputCn}
@@ -107,7 +108,7 @@ export function ContactForm() {
           </Field>
 
           <Field>
-            <FieldLabel className="uppercase tracking-widest text-secondary">
+            <FieldLabel htmlFor="contact-email" className="uppercase tracking-widest text-secondary">
               Email
             </FieldLabel>
 
@@ -118,6 +119,7 @@ export function ContactForm() {
                 render={({ field }) => (
                   <Input
                     type="email"
+                    id="contact-email"
                     placeholder="john@example.com"
                     autoComplete="email"
                     className={inputCn}
@@ -133,7 +135,7 @@ export function ContactForm() {
 
         {/* Subject */}
         <Field>
-          <FieldLabel className="uppercase tracking-widest text-secondary">
+          <FieldLabel htmlFor="contact-subject" className="uppercase tracking-widest text-secondary">
             Subject
           </FieldLabel>
 
@@ -143,6 +145,7 @@ export function ContactForm() {
               name="subject"
               render={({ field }) => (
                 <Input
+                  id="contact-subject"
                   placeholder="Technical Inquiry"
                   className={inputCn}
                   {...field}
@@ -156,7 +159,7 @@ export function ContactForm() {
 
         {/* Message */}
         <Field>
-          <FieldLabel className="uppercase tracking-widest text-secondary">
+          <FieldLabel htmlFor="contact-message" className="uppercase tracking-widest text-secondary">
             Message
           </FieldLabel>
 
@@ -166,6 +169,7 @@ export function ContactForm() {
               name="message"
               render={({ field }) => (
                 <Textarea
+                  id="contact-message"
                   rows={6}
                   placeholder="Define project scope or collaboration details..."
                   className={cn(
@@ -198,7 +202,7 @@ export function ContactForm() {
           {isLoading ? (
             <div className="flex items-center gap-2">
               {/* <Loader2 className="h-4 w-4 animate-spin" /> */}
-              <div className="mb-3">
+              <div className="mb-3" aria-hidden="true">
                 <LoaderOne />
               </div>
               Sending...
@@ -210,7 +214,7 @@ export function ContactForm() {
           ) : (
             <>
               Send Message
-              <SendHorizontal className="h-4 w-4" />
+              <SendHorizontal className="h-4 w-4" aria-hidden="true" />
             </>
           )}
         </Button>

@@ -6,12 +6,12 @@ import { HomeContact } from "@/components/home/HomeContact";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <HomeBanner />
       <HomeAbout />
       <HomeSkills />
       <HomeProfessionalJourney />
       <HomeContact />
-    </>
+    </main>
   );
 }

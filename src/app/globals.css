@@ -142,6 +142,28 @@
   color: black;
 }
 
+@keyframes shiny-text {
+  from {
+    background-position: 150% center;
+  }
+  to {
+    background-position: -50% center;
+  }
+}
+
+.shiny-text {
+  animation-duration: var(--shiny-duration);
+  animation-delay: var(--shiny-delay);
+  animation-direction: var(--shiny-animation-direction);
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  will-change: background-position;
+}
+
+.shiny-text--pause-on-hover:hover {
+  animation-play-state: paused;
+}
+
 @media (max-width: 767px) {
   .border-glow-card {
     border-color: rgb(216 94 94 / 35%);

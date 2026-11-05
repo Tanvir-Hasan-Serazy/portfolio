@@ -1,6 +1,6 @@
 "use client";
 
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import ShinyText from "../ShinyText";
@@ -39,7 +39,11 @@ const homeAboutData = [
 
 export const HomeAbout = () => {
   return (
-    <section id="about" className="my-36 scroll-mt-24">
+    <section
+      id="about"
+      aria-labelledby="about-heading"
+      className="my-36 scroll-mt-24"
+    >
       <style>{`
         .swiper-pagination-bullet {
           background-color: #d1d5db !important;
@@ -48,7 +52,7 @@ export const HomeAbout = () => {
           background-color: var(--color-primary, #3b82f6) !important;
         }
       `}</style>
-      <div className="text-center">
+      <h2 id="about-heading" className="text-center">
         <ShinyText
           text="About Me"
           speed={3}
@@ -62,15 +66,17 @@ export const HomeAbout = () => {
           disabled={false}
           className="text-4xl lg:text-5xl font-semibold "
         />
-      </div>
+      </h2>
       <span className="h-1 w-32 md:w-48 rounded-md bg-primary mx-auto block mt-2"></span>
 
       <div className="max-w-6xl mx-auto px-4 mt-12 lg:hidden">
         <Swiper
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
           slidesPerView={1}
           spaceBetween={16}
+          autoplay={{ delay: 3000, disableOnInteraction: true }}
           pagination={{ clickable: true }}
+          aria-label="About me highlights"
           loop={true}
         >
           {homeAboutData.map((item) => (

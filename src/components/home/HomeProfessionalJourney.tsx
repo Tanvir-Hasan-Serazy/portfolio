@@ -39,8 +39,8 @@ const data = [
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
               <DialogHeader className="sr-only">
-                <DialogTitle className="sr-only"></DialogTitle>
-                <DialogDescription className="sr-only"></DialogDescription>
+                <DialogTitle className="sr-only">NexM project preview</DialogTitle>
+                <DialogDescription className="sr-only">Expanded preview of the NexM project.</DialogDescription>
               </DialogHeader>
               <Image
                 src="/images/professional-journey/nexm.webp"
@@ -67,8 +67,8 @@ const data = [
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
               <DialogHeader className="sr-only">
-                <DialogTitle className="sr-only"></DialogTitle>
-                <DialogDescription className="sr-only"></DialogDescription>
+                <DialogTitle className="sr-only">Halal Fly project preview</DialogTitle>
+                <DialogDescription className="sr-only">Expanded preview of the Halal Fly project.</DialogDescription>
               </DialogHeader>
               <Image
                 src="/images/professional-journey/halal-fly2.webp"
@@ -95,8 +95,8 @@ const data = [
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
               <DialogHeader className="sr-only">
-                <DialogTitle className="sr-only"></DialogTitle>
-                <DialogDescription className="sr-only"></DialogDescription>
+                <DialogTitle className="sr-only">Halal Fly project preview</DialogTitle>
+                <DialogDescription className="sr-only">Expanded preview of the Halal Fly project.</DialogDescription>
               </DialogHeader>
               <Image
                 src="/images/professional-journey/halal-fly3.webp"
@@ -123,8 +123,8 @@ const data = [
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
               <DialogHeader className="sr-only">
-                <DialogTitle className="sr-only"></DialogTitle>
-                <DialogDescription className="sr-only"></DialogDescription>
+                <DialogTitle className="sr-only">Halal Fly project preview</DialogTitle>
+                <DialogDescription className="sr-only">Expanded preview of the Halal Fly project.</DialogDescription>
               </DialogHeader>
               <Image
                 src="/images/professional-journey/halal-fly1.webp"
@@ -167,8 +167,8 @@ const data = [
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
               <DialogHeader className="sr-only">
-                <DialogTitle className="sr-only"></DialogTitle>
-                <DialogDescription className="sr-only"></DialogDescription>
+                <DialogTitle className="sr-only">Skitto project preview</DialogTitle>
+                <DialogDescription className="sr-only">Expanded preview of the Skitto project.</DialogDescription>
               </DialogHeader>
               <Image
                 src="/images/professional-journey/skitto1.webp"
@@ -195,8 +195,8 @@ const data = [
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
               <DialogHeader className="sr-only">
-                <DialogTitle className="sr-only"></DialogTitle>
-                <DialogDescription className="sr-only"></DialogDescription>
+                <DialogTitle className="sr-only">Skitto project preview</DialogTitle>
+                <DialogDescription className="sr-only">Expanded preview of the Skitto project.</DialogDescription>
               </DialogHeader>
               <Image
                 src="/images/professional-journey/skitto2.webp"
@@ -223,8 +223,8 @@ const data = [
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
               <DialogHeader className="sr-only">
-                <DialogTitle className="sr-only"></DialogTitle>
-                <DialogDescription className="sr-only"></DialogDescription>
+                <DialogTitle className="sr-only">Sundarban project preview</DialogTitle>
+                <DialogDescription className="sr-only">Expanded preview of the Sundarban project.</DialogDescription>
               </DialogHeader>
               <Image
                 src="/images/professional-journey/sundarban1.webp"
@@ -251,8 +251,8 @@ const data = [
             </DialogTrigger>
             <DialogContent className="bg-transparent border-0 shadow-none p-0 md:min-w-lg lg:min-w-4xl xl:min-w-6xl">
               <DialogHeader className="sr-only">
-                <DialogTitle className="sr-only"></DialogTitle>
-                <DialogDescription className="sr-only"></DialogDescription>
+                <DialogTitle className="sr-only">Sundarban project preview</DialogTitle>
+                <DialogDescription className="sr-only">Expanded preview of the Sundarban project.</DialogDescription>
               </DialogHeader>
               <Image
                 src="/images/professional-journey/sundarban2.webp"
@@ -272,8 +272,8 @@ const data = [
 
 export const HomeProfessionalJourney = () => {
   return (
-    <section id="experience" className="min-h-screen my-20 scroll-mt-24">
-      <div className="text-center">
+    <section id="experience" aria-labelledby="experience-heading" className="min-h-screen my-20 scroll-mt-24">
+      <h2 id="experience-heading" className="text-center">
         <ShinyText
           text="Professional Journey"
           speed={3}
@@ -287,7 +287,7 @@ export const HomeProfessionalJourney = () => {
           disabled={false}
           className="text-4xl lg:text-5xl font-semibold "
         />
-      </div>
+      </h2>
       <span className="h-1 w-32 md:w-52 rounded-md bg-primary mx-auto block mt-2"></span>
 
       <div className="relative w-full overflow-clip">

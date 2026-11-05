@@ -1,6 +1,6 @@
 "use client";
 
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import ShinyText from "../ShinyText";
@@ -72,8 +72,8 @@ export const HomeSkills = () => {
           background-color: var(--color-primary, #3b82f6) !important;
         }
       `}</style>
-      <section id="skills" className="lg:min-h-screen lg:my-24 scroll-mt-24">
-        <div className="text-center">
+      <section id="skills" aria-labelledby="skills-heading" className="lg:min-h-screen lg:my-24 scroll-mt-24">
+        <h2 id="skills-heading" className="text-center">
           <ShinyText
             text="Skills"
             speed={3}
@@ -87,15 +87,17 @@ export const HomeSkills = () => {
             disabled={false}
             className="text-4xl lg:text-5xl font-semibold "
           />
-        </div>
+        </h2>
         <span className="h-1 w-32 md:w-48 rounded-md bg-primary mx-auto block mt-2"></span>
 
         <div className="max-w-6xl mx-auto px-4 mt-12 lg:hidden">
           <Swiper
-            modules={[Pagination]}
+            modules={[Pagination, Autoplay]}
             slidesPerView={1}
             spaceBetween={16}
+            autoplay={{ delay: 3000, disableOnInteraction: true }}
             pagination={{ clickable: true }}
+            aria-label="Skills categories"
             loop={true}
           >
             {homeSkillsData?.map((skill) => (

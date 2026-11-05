@@ -13,6 +13,17 @@ export const metadata: Metadata = {
   title: "Tanvir Hasan Serazy - Software Engineer Portfolio",
   description:
     "Personal portfolio of Tanvir Hasan Serazy, a software engineer specializing in web development and design. Showcasing projects, skills, and experience in creating innovative web solutions.",
+  icons: {
+    icon: [
+      {
+        url: "/favicon.png",
+        type: "image/png",
+        sizes: "512x512",
+      },
+    ],
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

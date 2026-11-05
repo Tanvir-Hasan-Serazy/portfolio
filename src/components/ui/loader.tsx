@@ -13,7 +13,7 @@ export const LoaderOne = () => {
     };
   };
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2" aria-hidden="true">
       <motion.div
         initial={{
           y: 0,

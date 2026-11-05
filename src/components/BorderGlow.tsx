@@ -321,6 +321,7 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
     >
       {/* mesh gradient border */}
       <div
+        aria-hidden="true"
         className="border-glow-effect absolute inset-0 rounded-[inherit] z-[-1]"
         style={{
           border: "1px solid transparent",
@@ -338,6 +339,7 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
 
       {/* mesh gradient fill near edges */}
       <div
+        aria-hidden="true"
         className="border-glow-effect absolute inset-0 rounded-[inherit] z-[-1]"
         style={
           {
@@ -373,6 +375,7 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
 
       {/* outer glow */}
       <span
+        aria-hidden="true"
         className="border-glow-effect absolute pointer-events-none z-1 rounded-[inherit]"
         style={
           {

@@ -30,12 +30,13 @@ export const Header = () => {
             alt="Logo"
             width={1400}
             height={700}
+            sizes="40px"
             className="object-cover w-full h-full"
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex gap-6">
+        <nav aria-label="Primary navigation" className="hidden lg:flex gap-6">
           {navigationLinks.map((link) => (
             <Link
               key={link.label}
@@ -45,7 +46,7 @@ export const Header = () => {
               {link.label}
             </Link>
           ))}
-        </div>
+        </nav>
 
         {/* Resume Download */}
         {/* <div className="hidden lg:flex items-center gap-2">
@@ -65,15 +66,18 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger className="lg:hidden">
-            <Menu className="text-primary" size={24} />
+          <SheetTrigger
+            className="lg:hidden"
+            aria-label="Open navigation menu"
+          >
+            <Menu className="text-primary" size={24} aria-hidden="true" />
           </SheetTrigger>
-          <SheetTitle className="sr-only"></SheetTitle>
+          <SheetTitle className="sr-only">Mobile navigation</SheetTitle>
           <SheetContent
             side="right"
             className="bg-background/80 border-l border-white/20 p-4"
           >
-            <div className="flex flex-col gap-6 mt-8 ">
+            <nav aria-label="Mobile navigation" className="flex flex-col gap-6 mt-8 ">
               {navigationLinks.map((link) => (
                 <Link
                   key={link.label}
@@ -84,7 +88,7 @@ export const Header = () => {
                   {link.label}
                 </Link>
               ))}
-            </div>
+            </nav>
           </SheetContent>
         </Sheet>
       </div>

@@ -47,8 +47,8 @@ export const HomeSkillsCard = ({ title, skills }: HomeSkillsCardProps) => {
                   alt={skill.label}
                   width={40}
                   height={40}
-                  preload
-                  className="object-cover h-10 md:h-auto w-10 lg:w-auto"
+                  sizes="40px"
+                  className="object-contain w-10 h-auto"
                 />
                 <p className="text-gray-200 text-sm md:text-base leading-relaxed lg:leading-10">
                   {skill.label}

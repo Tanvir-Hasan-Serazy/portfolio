@@ -49,9 +49,11 @@ export const HomeContact = () => {
   return (
     <section
       id="contact"
+      aria-labelledby="contact-heading"
       className="my-36 max-w-7xl mx-auto px-4 xl:px-0 scroll-mt-24"
     >
       <div className="flex flex-col gap-2 ">
+        <h2 id="contact-heading" className="flex flex-col gap-2">
         <ShinyText
           text="LET'S BUILD SOMETHING"
           speed={3}
@@ -78,6 +80,7 @@ export const HomeContact = () => {
           disabled={false}
           className="text-4xl lg:text-7xl font-semibold"
         />
+        </h2>
       </div>
       <p className="py-4 max-w-6xl text-gray-200 md:text-lg mt-6">
         Ready to bridge the gap between complex engineering and striking user
@@ -102,7 +105,7 @@ export const HomeContact = () => {
               animated={true}
               colors={["#D85E5E", "#732828"]}
             >
-              <AtSign className="size-6 lg:size-10 text-secondary" />
+              <AtSign className="size-6 lg:size-10 text-secondary" aria-hidden="true" />
             </BorderGlow>
             <div>
               <p className="text-lg text-secondary">Email</p>
@@ -129,7 +132,7 @@ export const HomeContact = () => {
               animated={true}
               colors={["#D85E5E", "#732828"]}
             >
-              <MapPin className="size-6 lg:size-10 text-secondary" />
+              <MapPin className="size-6 lg:size-10 text-secondary" aria-hidden="true" />
             </BorderGlow>
 
             <div>

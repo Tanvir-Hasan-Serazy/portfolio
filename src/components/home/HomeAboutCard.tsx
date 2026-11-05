@@ -45,7 +45,8 @@ export const HomeAboutCard = ({
               alt={alt}
               width={80}
               height={130}
-              className="object-cover"
+              sizes="80px"
+              className="object-cover w-auto h-auto"
             />
           </div>
         </BorderGlow>
