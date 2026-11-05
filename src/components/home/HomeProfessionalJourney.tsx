@@ -29,10 +29,11 @@ const data = [
           <Dialog key="nexm">
             <DialogTrigger className="cursor-pointer">
               <Image
-                src="/images/professional-journey/nexm.png"
+                src="/images/professional-journey/nexm.webp"
                 alt="startup template"
                 width={500}
                 height={500}
+                sizes="(max-width: 768px) 45vw, 300px"
                 className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] md:h-44 lg:h-60"
               />
             </DialogTrigger>
@@ -42,10 +43,11 @@ const data = [
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
               <Image
-                src="/images/professional-journey/nexm.png"
+                src="/images/professional-journey/nexm.webp"
                 alt="startup template"
                 width={1500}
                 height={1000}
+                sizes="(max-width: 768px) calc(100vw - 2rem), 1200px"
                 className="h-40 md:h-80 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset]  "
               />
             </DialogContent>
@@ -55,10 +57,11 @@ const data = [
           <Dialog key="halal-fly2">
             <DialogTrigger className="cursor-pointer">
               <Image
-                src="/images/professional-journey/halal-fly2.png"
+                src="/images/professional-journey/halal-fly2.webp"
                 alt="startup template"
                 width={500}
                 height={500}
+                sizes="(max-width: 768px) 45vw, 300px"
                 className="h-20 lg:h-60 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset]  "
               />
             </DialogTrigger>
@@ -68,10 +71,11 @@ const data = [
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
               <Image
-                src="/images/professional-journey/halal-fly2.png"
+                src="/images/professional-journey/halal-fly2.webp"
                 alt="startup template"
                 width={1500}
                 height={1000}
+                sizes="(max-width: 768px) calc(100vw - 2rem), 1200px"
                 className="h-40 md:h-80 lg:h-100 xl:h-140 w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset]  "
               />
             </DialogContent>
@@ -81,10 +85,11 @@ const data = [
           <Dialog key="halal-fly3">
             <DialogTrigger className="cursor-pointer">
               <Image
-                src="/images/professional-journey/halal-fly3.png"
+                src="/images/professional-journey/halal-fly3.webp"
                 alt="startup template"
                 width={500}
                 height={500}
+                sizes="(max-width: 768px) 45vw, 300px"
                 className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] md:h-44 lg:h-60"
               />
             </DialogTrigger>
@@ -94,10 +99,11 @@ const data = [
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
               <Image
-                src="/images/professional-journey/halal-fly3.png"
+                src="/images/professional-journey/halal-fly3.webp"
                 alt="startup template"
                 width={1500}
                 height={1000}
+                sizes="(max-width: 768px) calc(100vw - 2rem), 1200px"
                 className="h-40 md:h-80 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset]  lg:h-120"
               />
             </DialogContent>
@@ -107,10 +113,11 @@ const data = [
           <Dialog key="halal-fly4">
             <DialogTrigger className="cursor-pointer">
               <Image
-                src="/images/professional-journey/halal-fly1.jpg"
+                src="/images/professional-journey/halal-fly1.webp"
                 alt="startup template"
                 width={500}
                 height={500}
+                sizes="(max-width: 768px) 45vw, 300px"
                 className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] md:h-44 lg:h-60"
               />
             </DialogTrigger>
@@ -120,10 +127,11 @@ const data = [
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
               <Image
-                src="/images/professional-journey/halal-fly1.jpg"
+                src="/images/professional-journey/halal-fly1.webp"
                 alt="startup template"
                 width={1500}
                 height={1000}
+                sizes="(max-width: 768px) calc(100vw - 2rem), 1200px"
                 className="h-40 md:h-80 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset]"
               />
             </DialogContent>
@@ -149,10 +157,11 @@ const data = [
           <Dialog key="skitto1">
             <DialogTrigger className="cursor-pointer" key="skitto1">
               <Image
-                src="/images/professional-journey/skitto1.png"
+                src="/images/professional-journey/skitto1.webp"
                 alt="hero template"
                 width={500}
                 height={500}
+                sizes="(max-width: 768px) 45vw, 300px"
                 className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] md:h-44 lg:h-60"
               />
             </DialogTrigger>
@@ -162,10 +171,11 @@ const data = [
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
               <Image
-                src="/images/professional-journey/skitto1.png"
+                src="/images/professional-journey/skitto1.webp"
                 alt="hero template"
                 width={1500}
                 height={1000}
+                sizes="(max-width: 768px) calc(100vw - 2rem), 1200px"
                 className="h-40 md:h-80 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] "
               />
             </DialogContent>
@@ -175,10 +185,11 @@ const data = [
           <Dialog key="skitto2">
             <DialogTrigger className="cursor-pointer" key="skitto2">
               <Image
-                src="/images/professional-journey/skitto2.png"
+                src="/images/professional-journey/skitto2.webp"
                 alt="hero template"
                 width={500}
                 height={500}
+                sizes="(max-width: 768px) 45vw, 300px"
                 className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] md:h-44 lg:h-60"
               />
             </DialogTrigger>
@@ -188,10 +199,11 @@ const data = [
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
               <Image
-                src="/images/professional-journey/skitto2.png"
+                src="/images/professional-journey/skitto2.webp"
                 alt="hero template"
                 width={1500}
                 height={1000}
+                sizes="(max-width: 768px) calc(100vw - 2rem), 1200px"
                 className="h-40 md:h-80 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] "
               />
             </DialogContent>
@@ -201,10 +213,11 @@ const data = [
           <Dialog key="sundarban1">
             <DialogTrigger className="cursor-pointer" key="sundarban1">
               <Image
-                src="/images/professional-journey/sundarban1.png"
+                src="/images/professional-journey/sundarban1.webp"
                 alt="bento template"
                 width={500}
                 height={500}
+                sizes="(max-width: 768px) 45vw, 300px"
                 className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] md:h-44 lg:h-60"
               />
             </DialogTrigger>
@@ -214,10 +227,11 @@ const data = [
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
               <Image
-                src="/images/professional-journey/sundarban1.png"
+                src="/images/professional-journey/sundarban1.webp"
                 alt="bento template"
                 width={1500}
                 height={1000}
+                sizes="(max-width: 768px) calc(100vw - 2rem), 1200px"
                 className="h-40 md:h-80 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] "
               />
             </DialogContent>
@@ -227,10 +241,11 @@ const data = [
           <Dialog key="sundarban2">
             <DialogTrigger className="cursor-pointer" key="sundarban2">
               <Image
-                src="/images/professional-journey/sundarban2.png"
+                src="/images/professional-journey/sundarban2.webp"
                 alt="cards template"
                 width={500}
                 height={500}
+                sizes="(max-width: 768px) 45vw, 300px"
                 className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] md:h-44 lg:h-60"
               />
             </DialogTrigger>
@@ -240,10 +255,11 @@ const data = [
                 <DialogDescription className="sr-only"></DialogDescription>
               </DialogHeader>
               <Image
-                src="/images/professional-journey/sundarban2.png"
+                src="/images/professional-journey/sundarban2.webp"
                 alt="cards template"
                 width={1500}
                 height={1000}
+                sizes="(max-width: 768px) calc(100vw - 2rem), 1200px"
                 className="h-40 md:h-80 xl:h-140 md:min-w-md w-full lg:min-w-4xl rounded-lg object-cover shadow-[0_0_24px_rgba(34,42,53,0.06),0_1px_1px_rgba(0,0,0,0.05),0_0_0_1px_rgba(34,42,53,0.04),0_0_4px_rgba(34,42,53,0.08),0_16px_68px_rgba(47,48,55,0.05),0_1px_0_rgba(255,255,255,0.1)_inset] "
               />
             </DialogContent>

@@ -61,8 +61,10 @@ export const HomeBanner = () => {
         </div>
         <div>
           <ImageWithFallback
-            src="/images/banner/banner.png"
+            src="/images/banner/banner.webp"
             alt="Banner"
+            loading="eager"
+            fetchPriority="high"
             preload
             height={1700}
             width={1500}
