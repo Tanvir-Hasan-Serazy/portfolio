@@ -306,7 +306,7 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
         isHoveredRef.current = false;
         updateGlowStyles();
       }}
-      className={`relative grid isolate border border-white/15 ${className}`}
+      className={`border-glow-card relative grid isolate border border-white/15 ${className}`}
       style={{
         "--glow-angle": "45deg",
         "--glow-border-opacity": 0,
@@ -321,7 +321,7 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
     >
       {/* mesh gradient border */}
       <div
-        className="absolute inset-0 rounded-[inherit] z-[-1]"
+        className="border-glow-effect absolute inset-0 rounded-[inherit] z-[-1]"
         style={{
           border: "1px solid transparent",
           background: [
@@ -338,7 +338,7 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
 
       {/* mesh gradient fill near edges */}
       <div
-        className="absolute inset-0 rounded-[inherit] z-[-1]"
+        className="border-glow-effect absolute inset-0 rounded-[inherit] z-[-1]"
         style={
           {
             border: "1px solid transparent",
@@ -373,7 +373,7 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
 
       {/* outer glow */}
       <span
-        className="absolute pointer-events-none z-1 rounded-[inherit]"
+        className="border-glow-effect absolute pointer-events-none z-1 rounded-[inherit]"
         style={
           {
             inset: `${-glowRadius}px`,

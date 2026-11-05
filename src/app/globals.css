@@ -141,3 +141,17 @@
   background-color: #9c3b3b;
   color: black;
 }
+
+@media (max-width: 767px) {
+  .border-glow-card {
+    border-color: rgb(216 94 94 / 35%);
+    box-shadow:
+      0 0 0 1px rgb(216 94 94 / 18%),
+      0 0 18px rgb(115 40 40 / 28%),
+      inset 0 0 14px rgb(216 94 94 / 7%) !important;
+  }
+
+  .border-glow-effect {
+    display: none;
+  }
+}
