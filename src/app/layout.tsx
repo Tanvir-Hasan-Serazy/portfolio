@@ -10,6 +10,7 @@ const overpassMono = Overpass_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.serazy.dev"),
   title: "Tanvir Hasan Serazy - Software Engineer Portfolio",
   description:
     "Personal portfolio of Tanvir Hasan Serazy, a software engineer specializing in web development and design. Showcasing projects, skills, and experience in creating innovative web solutions.",
