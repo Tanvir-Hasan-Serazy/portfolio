@@ -5,8 +5,24 @@ import { HomeProfessionalJourney } from "@/components/home/HomeProfessionalJourn
 import { HomeContact } from "@/components/home/HomeContact";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Tanvir Hasan Serazy",
+    url: "https://www.serazy.dev",
+    jobTitle: "Software Engineer",
+    image: "https://www.serazy.dev/favicon.png",
+    mainEntityOfPage: "https://www.serazy.dev",
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <HomeBanner />
       <HomeAbout />
       <HomeSkills />

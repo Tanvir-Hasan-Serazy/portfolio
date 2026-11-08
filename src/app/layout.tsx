@@ -12,8 +12,14 @@ const overpassMono = Overpass_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.serazy.dev"),
   title: "Tanvir Hasan Serazy - Software Engineer Portfolio",
+  applicationName: "Serazy",
+  creator: "Tanvir Hasan Serazy",
+  publisher: "Tanvir Hasan Serazy",
   description:
     "Personal portfolio of Tanvir Hasan Serazy, a software engineer specializing in web development and design. Showcasing projects, skills, and experience in creating innovative web solutions.",
+  alternates: {
+    canonical: "https://www.serazy.dev",
+  },
   openGraph: {
     type: "website",
     url: "https://www.serazy.dev",
@@ -52,6 +58,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon-48.png",
     apple: "/favicon.png",
   },
+  manifest: "/manifest.webmanifest",
 };
 
 export default function RootLayout({
